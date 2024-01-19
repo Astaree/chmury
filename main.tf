@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "bastion" {
-  ami           = "ami-0c94855ba95c574c8"
+  ami           = "ami-0005e0cfe09cc9050"
   instance_type = "t2.micro"
   key_name      = "vockey"
 
@@ -32,7 +32,7 @@ resource "aws_security_group" "bastion" {
 }
 
 resource "aws_instance" "app" {
-  ami           = "ami-0c94855ba95c574c8"
+  ami           = "ami-0005e0cfe09cc9050"
   instance_type = "t2.micro"
 
   tags = {
@@ -84,7 +84,7 @@ resource "aws_autoscaling_group" "app" {
 }
 
 resource "aws_launch_configuration" "app" {
-  image_id        = "ami-0c94855ba95c574c8"
+  image_id        = "ami-0005e0cfe09cc9050"
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.app.id]
 }
