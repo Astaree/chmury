@@ -13,7 +13,7 @@ resource "aws_instance" "bastion" {
 
 resource "aws_security_group" "bastion" {
   name        = "BastionSG"
-  description = "Bezpieczeństwo dla bastion hosta"
+  description = "Host safety"
 
   ingress {
     from_port   = 22
@@ -41,7 +41,7 @@ resource "aws_instance" "app" {
 
 resource "aws_security_group" "app" {
   name        = "AppSG"
-  description = "Bezpieczeństwo dla aplikacji"
+  description = "App safety"
 
   ingress {
     from_port   = 80
@@ -64,7 +64,7 @@ resource "aws_db_instance" "default" {
 
 resource "aws_security_group" "db" {
   name        = "DbSG"
-  description = "Bezpieczeństwo dla bazy danych"
+  description = "DB safety"
 
   ingress {
     from_port       = 3306
